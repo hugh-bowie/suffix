@@ -1,0 +1,176 @@
+:root {
+	--primary-color: #0c4883;
+	--secondary-color: darkgoldenrod;
+}
+
+.z {
+	border: solid 1px red;
+}
+h1{
+	color: #1da1f2;
+	width:100%;
+}
+
+html,
+body {
+	font-family: 'Arial';
+	height: 100%;
+}
+
+#highScores div div {
+	padding: 5px;
+	font-weight: 600;
+}
+
+#highScores div div:nth-child(odd) {
+	background-color: rgb(104, 189, 104);
+}
+
+#highScores button {
+	margin: 5px 0;
+}
+
+#quizBody {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 16px 30px;
+}
+
+section {
+	max-width: 60%;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#controls {
+	background-color: white;
+}
+
+#info {
+	max-width: 980px;
+		
+	margin: 0 auto;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	padding: 16px 30px;
+}
+
+#scores {
+	left: 40px;
+	background-color: var(--primary-color);
+	color: white;
+	
+}
+
+#timer {
+	right: 40px;
+	color: var(--primary-color);
+	font-weight: bold;
+}
+
+#intro {
+	text-align: left;
+	
+}
+
+button {
+	background-color: var(--primary-color);
+	color: white;
+	border: none;
+	padding: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: var(--secondary-color);
+}
+
+#quizHolder #title {
+	font-weight: 700;
+	
+}
+
+#quizHolder button {
+	background-color: var(--primary-color);
+	border-radius: 5px;
+	color: white;
+	margin: 3px 0;
+	padding: 5px;
+	
+	cursor: pointer;
+	display: block;
+	width: 100%;
+	text-align: left;
+}
+
+#quizHolder button:hover {
+	background-color: var(--secondary-color);
+}
+
+#scoreAlert,
+#errorAlert {
+	border-top: 1px solid #999;
+	color: green;
+	font-size: 1.3em;
+	font-style: italic;
+	font-weight: 700;
+	margin: 10px auto;
+}
+
+#scoreAlert p,
+#errorIndicator p {
+	margin: 0;
+	margin-top: 10px;
+}
+
+#records input,
+#records button {
+	margin-top: 5px;
+}
+
+.hide {
+	display: none;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.disable {
+	pointer-events: none;
+}
+
+@media only screen and (min-width: 768px) {
+	#quizBody {
+		min-height: calc(100% - 82px);
+	}
+
+	#finish #records {
+		display: flex;
+		align-items: center;
+	}
+
+	#finish #records input,
+	#finish #records button {
+		margin-left: 10px;
+	}
+
+	#info {
+		flex-direction: row;
+		
+	}
+
+	#quizHolder {
+	
+		min-width: 420px;
+	}
+
+	#quizHolder ol {
+		min-width: 100%;
+	}
+}

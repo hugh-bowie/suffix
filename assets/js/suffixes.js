@@ -726,7 +726,6 @@ const suffixes = [
 	'-pocalypse',
 	'-pod',
 	'-poeia',
-	'-pœia',
 	'-poiesis',
 	'-polis',
 	'-polises',
@@ -782,7 +781,6 @@ const suffixes = [
 	'-rrhea',
 	'-rrhexis',
 	'-rrhoea',
-	'-rrhœa',
 	'-rubicin',
 	'-ry',
 	'-`s',
@@ -982,19 +980,28 @@ const suffixes = [
 ]
 
 
-const suffixing = suffixes
+
+
+
+const suffixtags = suffixes
 	.sort(() => Math.random() - Math.random())
 	.slice(0, 30)
 	.toString()
-	.replace(/-/g, '#creep')
+	.replace(/-/g, '#' + werd)
 	.replace(/\,/g, ' ');
 
 
+const suffixing = suffixes
+	.sort(() => Math.random() - Math.random())
+	.slice(0, 50)
+	.toString()
+	.replace(/-/g, werd + 'a')
+	.replace(/\,/g, ' \n');
 
-const suffixtags = suffixes.sort(() => Math.random() - Math.random()).slice(0, 30).toString().replace(/-/g, '#lurk').replace(/\,/g, ' ');
 const suffixed = `${suffixing} \n`;
-console.log(`${suffixtags} \n`);
-console.log(`${suffixing} \n`);
+console.log(`\n${suffixing}\n`);
+console.log(`${suffixtags}`);
+
 
 //put the stuff into the html elements
 function getSuffixes() {
@@ -1005,5 +1012,5 @@ function getSuffixes() {
 }
 
 //activate the html go button
-const generateBtn = document.querySelector('#go-suffix');
-generateBtn.addEventListener('click', getSuffixes);
+// const generateBtn = document.querySelector('#go-suffix');
+// generateBtn.addEventListener('click', getSuffixes);
