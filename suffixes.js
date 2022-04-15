@@ -1,3 +1,4 @@
+const fs = require('fs');
 //random number function
 function r(min, max) {
 	return ~~(Math.random() * (max - min) + min);
@@ -195,7 +196,7 @@ const suffixes = [
 	'-cy',
 	'-cycline',
 	'-cyte',
-	'-`d',
+	'-d',
 	'-d',
 	'-dactyl',
 	'-dan',
@@ -225,7 +226,7 @@ const suffixes = [
 	'-eaux',
 	'-ectomy',
 	'-ed',
-	'-èd',
+
 	'-ee',
 	'-een',
 	'-eer',
@@ -247,7 +248,7 @@ const suffixes = [
 	'-ent',
 	'-enyl',
 	'-eous',
-	'-`er',
+	'-er',
 	'-er',
 	'-ergic',
 	'-ergy',
@@ -356,7 +357,7 @@ const suffixes = [
 	'-holic',
 	'-holism',
 	'-hood',
-	'-hour-old',
+	'-hourold',
 	'-i',
 	'-ia',
 	'-iad',
@@ -411,9 +412,9 @@ const suffixes = [
 	'-imundo',
 	'-imus',
 	'-in',
-	'-in`',
-	'-in-law',
-	'-in-waiting',
+	'-in',
+	'-inlaw',
+	'-inwaiting',
 	'-inator',
 	'-inda',
 	'-ine',
@@ -435,7 +436,7 @@ const suffixes = [
 	'-istic',
 	'-istical',
 	'-istically',
-	'-it-all',
+	'-itall',
 	'-ite',
 	'-itis',
 	'-itol',
@@ -578,12 +579,12 @@ const suffixes = [
 	'-nomicon',
 	'-nomics',
 	'-nomy',
-	'-n`t',
+	'-nt',
 	'-nym',
 	'-nymy',
 	'-o',
-	'-o-matic',
-	'-o-rama',
+	'-omatic',
+	'-orama',
 	'-oate',
 	'-ock',
 	'-ocracy',
@@ -644,7 +645,7 @@ const suffixes = [
 	'-otomy',
 	'-our',
 	'-ous',
-	'-out-law',
+	'-outlaw',
 	'-ov',
 	'-oxacin',
 	'-oxanide',
@@ -670,7 +671,7 @@ const suffixes = [
 	'-penia',
 	'-people',
 	'-peridol',
-	'-peridone',
+
 	'-perone',
 	'-person',
 	'-petal',
@@ -783,7 +784,7 @@ const suffixes = [
 	'-rrhoea',
 	'-rubicin',
 	'-ry',
-	'-`s',
+	'-s',
 	'-s',
 	'-safe',
 	'-sal',
@@ -886,7 +887,7 @@ const suffixes = [
 	'-tirelin',
 	'-tizide',
 	'-tizolam',
-	'-to-be',
+	'-tobe',
 	'-toin',
 	'-tome',
 	'-tomy',
@@ -952,7 +953,7 @@ const suffixes = [
 	'-wick',
 	'-wide',
 	'-wise',
-	'-woman',
+
 	'-women',
 	'-work',
 	'-worth',
@@ -981,26 +982,39 @@ const suffixes = [
 
 
 
-
+let werd = 'Houdini';
 
 const suffixtags = suffixes
 	.sort(() => Math.random() - Math.random())
-	.slice(0, 30)
+	.slice(0, 27)
 	.toString()
-	.replace(/-/g, '#' + werd)
-	.replace(/\,/g, ' ');
+	.replace(/-/g, `#${werd}`)
+	.replace(/\,/g, '\n');
 
 
 const suffixing = suffixes
 	.sort(() => Math.random() - Math.random())
-	.slice(0, 50)
+	.slice(0, 27)
 	.toString()
-	.replace(/-/g, werd + 'a')
+	.replace(/-/g, werd)
 	.replace(/\,/g, ' \n');
 
 const suffixed = `${suffixing} \n`;
-console.log(`\n${suffixing}\n`);
+//console.log(`\n${suffixing}\n`);
+//console.log(`${suffixtags}`);
+
+
+
+fs.appendFileSync('C:/t/suffix.txt', `${suffixtags}`, 'utf8');
 console.log(`${suffixtags}`);
+
+
+
+
+
+
+
+
 
 
 //put the stuff into the html elements
@@ -1012,5 +1026,3 @@ function getSuffixes() {
 }
 
 //activate the html go button
-// const generateBtn = document.querySelector('#go-suffix');
-// generateBtn.addEventListener('click', getSuffixes);
