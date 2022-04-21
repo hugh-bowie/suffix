@@ -1,6 +1,10 @@
 
-let werd = process.argv[2]// node[0] sript.js[1] "shitbag"[2]   ===   node script.js shitbag
-let w = process.argv[3];// node[0] sript.js[1] "shitbag"[2] "g[3]"   ===   node script.js shitbag g
+
+
+//let baseword = process.argv[2];// node[0] sript.js[1] "shitbag"[2]   ===   node script.js shitbag
+//let w = process.argv[3];//  node script.js shitbag a
+
+
 
 //werd = werd.match(/[dmpty]$/i);
 //werd += werd + dmpty.toString();
@@ -95,7 +99,6 @@ const suffixes = [
 	'-ata',
 	'-ate',
 	'-athlon',
-	'-athon',
 	'-atim',
 	'-ation',
 	'-ative',
@@ -230,7 +233,6 @@ const suffixes = [
 	'-eaux',
 	'-ectomy',
 	'-ed',
-	'-èd',
 	'-ee',
 	'-een',
 	'-eer',
@@ -469,7 +471,6 @@ const suffixes = [
 	'-lagnia',
 	'-lalia',
 	'-land',
-	'-land',
 	'-landia',
 	'-later',
 	'-latry',
@@ -489,7 +490,6 @@ const suffixes = [
 	'-lings',
 	'-lite',
 	'-lith',
-	'-lock',
 	'-lock',
 	'-log',
 	'-logic',
@@ -615,8 +615,6 @@ const suffixes = [
 	'-ometer',
 	'-ometry',
 	'-omics',
-	'-ome',
-	'-omics',
 	'-on',
 	'-one',
 	'-onidine',
@@ -632,7 +630,6 @@ const suffixes = [
 	'-opsia',
 	'-opsy',
 	'-or',
-	'-orama',
 	'-orium',
 	'-orphan',
 	'-orphine',
@@ -986,32 +983,47 @@ const suffixes = [
 
 
 
-const suffixing = suffixes
-	.sort(() => Math.random() - Math.random())
-	.slice(0, 25)
-	.toString()
-	.replace(/-/g, `#${werd}`)
-	.replace(/\,/g, ' ');
+// const suffixing = suffixes
+// 	.sort(() => Math.random() - Math.random())
+// 	.slice(0, 25)
+// 	.toString()
+// 	.replace(/-/g, `#${werd}`)
+// 	.replace(/\,/g, ' ');
 
-const suffixtags = suffixes
-	.sort(() => Math.random() - Math.random())
-	.slice(0, 25)
-	.toString()
-	.replace(/-/g, `#${werd}${w}`)
-	.replace(/\,/g, ' ');
+// const suffixtags = suffixes
+// 	.sort(() => Math.random() - Math.random())
+// 	.slice(0, 25)
+// 	.toString()
+// 	.replace(/-/g, `#${werd}${w}`)
+// 	.replace(/\,/g, ' ');
 
-const suffixed = `${suffixing} \n`;
-console.log(`${suffixtags} \n`);
-console.log(`${suffixing} \n`);
+// const suffixed = `${suffixing} \n`;
+// console.log(`${suffixtags} \n`);
+// console.log(`${suffixing} \n`);
 
-//put the stuff into the html elements
-function getSuffixes() {
-	const resultText = document.querySelector('#result');
-	resultText.value = ' ';
-	const result = writeSuffixes();
-	resultText.value = result;
+
+
+
+// grab the value of the input box
+let getWord = function () {
+	pageContentEl('#word').value;
+	console.log(getWord);
 }
 
-//activate the html go button
-//const generateBtn = document.querySelector('#go-suffix');
-//generateBtn.addEventListener('click', getSuffixes);
+//multistep process
+function startSuffixing() {
+	pageContentEl('#resultSection').classList.remove('hide');
+	pageContentEl('#results').innerHTML = `${getWord}`;
+	//checkWord();
+	//showResults();
+
+}
+
+// global function variable for doc.qrySlctor
+let pageContentEl = function (element) {
+	return document.querySelector(element);
+};
+
+
+//activate the html suffixate button
+pageContentEl('#go').addEventListener('click', startSuffixing());
