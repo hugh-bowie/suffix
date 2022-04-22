@@ -15,17 +15,21 @@
       <h1>Suffixacte Me</h1>
     </header>
     <div class="card">
-      <div class="card-header">
-        <div class="inputWord">
-          <label class="lbl" for="wordInput">Put a word in here</label>
-          <input id="wordInput" name="word_input" type="text" maxlength="100" minlength="1">
+      <form>
+        <div>
+          <label for="wordinput">Type a word to suffixate</label>
+          <input id="wordinput" name="word_input" type="text" required autofocus pattern="[a-zA-Z]{2,20}">
+          <span class="validity"></span>
+          <button id="goo" class="btn">Do Work</button>
         </div>
-      </div>
+        <div>
+        </div>
+      </form>
       <div class="card-body">
         <textarea readonly id="password" placeholder="ta-da" aria-label="Generated Password"></textarea>
       </div>
       <div class="card-footer">
-        <button id="go" class="btn">Add Suffixes</button>
+        <!-- <button id="go" class="btn">Add Suffixes</button> -->
       </div>
     </div>
   </div>

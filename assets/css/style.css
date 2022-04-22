@@ -17,23 +17,31 @@ body {
 	background-color: white;
 }
 
-input[type="text"] {
-
-display: block;
-margin: auto;
-}
-
-label{
-	padding-bottom: 10px;
-	/* border: 1px solid red; */
-}
-
-.inputWord{
+header {
 	text-align: center;
-display: block;
-margin: auto;
-padding: 10px;
+	padding: 20px;
+	padding-top: 0px;
+	color: #3486eb;
+}
 
+/*---TEXT INPUT RULES---*/
+
+input + span {
+	position: relative;
+}
+
+input:valid + span:after {
+  position: relative;
+  content: '✓';
+	color: #3486eb;
+  padding-left: 10px;
+}
+
+input:invalid + span:after {
+  position: relative; 
+	content: '✖';
+	color: red;
+  padding-left: 10px;
 }
 
 .wrapper {
@@ -43,19 +51,11 @@ padding: 10px;
 }
 
 .wrapper h1 {
-	color: black;
-}
-
-header {
-	text-align: center;
-	padding: 20px;
-	padding-top: 0px;
-	color: hsl(206, 17%, 28%);
+	color:#3486eb;
 }
 
 .card {
 	background-color: hsl(0, 0%, 100%);
-	
 	border-radius: 5px;
 	border-width: 1px;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
@@ -64,6 +64,7 @@ header {
 	margin: 0 auto;
 	max-width: 800px;
 	padding: 30px 40px;
+	/* border: 1px solid red; */
 }
 
 .card-header::after {
@@ -100,15 +101,15 @@ header {
 
 .btn {
 	border: none;
-	background-color: darkred;
+	background-color: #3486eb;
 	border-radius: 25px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
 	color: hsl(0, 0%, 100%);
 	display: inline-block;
-	font-size: 22px;
-	line-height: 22px;
+	font-size: 18px;
+	line-height: 26px;
 	margin: 16px 16px 16px 20px;
-	padding: 14px 34px;
+	padding: 5px 24px;
 	text-align: center;
 	cursor: pointer;
 }
@@ -161,3 +162,4 @@ button[disabled] {
 		font-size: 0.8rem;
 	}
 }
+
