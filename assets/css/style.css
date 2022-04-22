@@ -1,176 +1,163 @@
-:root {
-	--primary-color: #0c4883;
-	--secondary-color: darkgoldenrod;
-}
-
-.z {
-	border: solid 1px red;
-}
-h1{
-	color: #1da1f2;
-	width:100%;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
 html,
-body {
-	font-family: 'Arial';
+body,
+.wrapper {
 	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
-#highScores div div {
-	padding: 5px;
-	font-weight: 600;
-}
-
-#highScores div div:nth-child(odd) {
-	background-color: rgb(104, 189, 104);
-}
-
-#highScores button {
-	margin: 5px 0;
-}
-
-#quizBody {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	padding: 16px 30px;
-}
-
-section {
-	max-width: 60%;
-	margin: 0 auto;
-	text-align: left;
-}
-
-#controls {
+body {
+	font-family: Arial;
 	background-color: white;
 }
 
-#info {
-	max-width: 980px;
-		
+input[type="text"] {
+
+display: block;
+margin: auto;
+}
+
+label{
+	padding-bottom: 10px;
+	/* border: 1px solid red; */
+}
+
+.inputWord{
+	text-align: center;
+display: block;
+margin: auto;
+padding: 10px;
+
+}
+
+.wrapper {
+	padding-top: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.wrapper h1 {
+	color: black;
+}
+
+header {
+	text-align: center;
+	padding: 20px;
+	padding-top: 0px;
+	color: hsl(206, 17%, 28%);
+}
+
+.card {
+	background-color: hsl(0, 0%, 100%);
+	
+	border-radius: 5px;
+	border-width: 1px;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+	color: hsl(206, 17%, 28%);
+	font-size: 18px;
 	margin: 0 auto;
-	color: white;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-direction: column;
-	padding: 16px 30px;
+	max-width: 800px;
+	padding: 30px 40px;
 }
 
-#scores {
-	left: 40px;
-	background-color: var(--primary-color);
-	color: white;
-	
-}
-
-#timer {
-	right: 40px;
-	color: var(--primary-color);
-	font-weight: bold;
-}
-
-#intro {
-	text-align: left;
-	
-}
-
-button {
-	background-color: var(--primary-color);
-	color: white;
-	border: none;
-	padding: 5px;
-	border-radius: 5px;
-	cursor: pointer;
-}
-
-button:hover {
-	background-color: var(--secondary-color);
-}
-
-#quizHolder #title {
-	font-weight: 700;
-	
-}
-
-#quizHolder button {
-	background-color: var(--primary-color);
-	border-radius: 5px;
-	color: white;
-	margin: 3px 0;
-	padding: 5px;
-	
-	cursor: pointer;
+.card-header::after {
+	content: ' ';
 	display: block;
 	width: 100%;
-	text-align: left;
-}
-
-#quizHolder button:hover {
-	background-color: var(--secondary-color);
-}
-
-#scoreAlert,
-#errorAlert {
-	border-top: 1px solid #999;
-	color: green;
-	font-size: 1.3em;
-	font-style: italic;
-	font-weight: 700;
-	margin: 10px auto;
-}
-
-#scoreAlert p,
-#errorIndicator p {
-	margin: 0;
-	margin-top: 10px;
-}
-
-#records input,
-#records button {
-	margin-top: 5px;
-}
-
-.hide {
-	display: none;
-}
-
-.invisible {
-	visibility: hidden;
-}
-
-.disable {
-	pointer-events: none;
-}
-
-@media only screen and (min-width: 768px) {
-	#quizBody {
-		min-height: calc(100% - 82px);
-	}
-
-	#finish #records {
-		display: flex;
-		align-items: center;
-	}
-
-	#finish #records input,
-	#finish #records button {
-		margin-left: 10px;
-	}
-
-	#info {
-		flex-direction: row;
-		
-	}
-
-	#quizHolder {
+	background: #e7e9eb;
+	height: 2px;
 	
-		min-width: 420px;
+}
+
+.card-body {
+	min-height: 100px;
+}
+
+.card-footer {
+	text-align: center;
+}
+
+.card-footer::before {
+	content: ' ';
+	display: block;
+	width: 100%;
+	background: #e7e9eb;
+	height: 2px;
+	
+}
+
+.card-footer::after {
+	content: ' ';
+	display: block;
+	clear: both;
+}
+
+.btn {
+	border: none;
+	background-color: darkred;
+	border-radius: 25px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+	color: hsl(0, 0%, 100%);
+	display: inline-block;
+	font-size: 22px;
+	line-height: 22px;
+	margin: 16px 16px 16px 20px;
+	padding: 14px 34px;
+	text-align: center;
+	cursor: pointer;
+}
+
+button[disabled] {
+	cursor: default;
+	background: #c0c7cf;
+}
+
+.float-right {
+	float: right;
+	
+}
+
+#password {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	display: block;
+	width: 100%;
+	padding-top: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 85px;
+	font-size: 1.2rem;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 2px dashed #c0c7cf;
+	border-radius: 6px;
+	resize: none;
+	overflow: hidden;
+}
+
+@media (max-width: 690px) {
+	.btn {
+		font-size: 1rem;
+		margin: 16px 0px 0px 0px;
+		padding: 10px 15px;
 	}
 
-	#quizHolder ol {
-		min-width: 100%;
+	#password {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 500px) {
+	.btn {
+		font-size: 0.8rem;
 	}
 }

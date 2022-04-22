@@ -2,60 +2,34 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Suffixated</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Suffix Tool</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
-  <div id="controls">
-    <div id="info">
-      <button id="scores" class="invisible" href="">View High Scores</button>
-      <div>
-        <h1>Suffixate Me</h1>
+  <div class="wrapper">
+    <header>
+      <h1>Suffixacte Me</h1>
+    </header>
+    <div class="card">
+      <div class="card-header">
+        <div class="inputWord">
+          <label class="lbl" for="wordInput">Put a word in here</label>
+          <input id="wordInput" name="word_input" type="text" maxlength="100" minlength="1">
+        </div>
       </div>
-      <div id="timer">
-        <p class="invisible">Time: <span id="time">0</span></p>
+      <div class="card-body">
+        <textarea readonly id="password" placeholder="ta-da" aria-label="Generated Password"></textarea>
+      </div>
+      <div class="card-footer">
+        <button id="go" class="btn">Add Suffixes</button>
       </div>
     </div>
   </div>
-  <div id="quizBody">
-    <section id="intro">
-      <div style="padding:25px;">Pick a word:&nbsp;&nbsp;<input type="text" id="word" name="word" placeholder="Toxic">
-        <button id="go">Suffixate</button>
-      </div>
-      <!-- <div style="padding:10px;"><input type="radio" id="one" value="1">&nbsp;1&nbsp;&nbsp;<input type="radio" id="thirty" value="30">&nbsp;30&nbsp;&nbsp;</div> -->
-    </section>
-    <section id="resultSection" class="hide">
-      <p id="title"></p>
-      <div id="results" class="hide">
-      </div>
-    </section>
-    <section id="finish" class="hide">
-      <h1>All Done</h1>
-      <p>Your final score is&nbsp;<span id="score"></span></p>
-      <div id="records">
-        <p>Enter initials: </p><input id="initials" type="text"> <button>Submit</button>
-      </div>
-      <div id="errorAlert" class="invisible">
-        <p>&nbsp;</p>
-      </div>
-    </section>
-    <section id="highScores" class="hide">
-      <h1>High Scores</h1>
-      <div>
-      </div>
-      <button id="reset">Go Back</button> <button id="clearScores">Clear High Scores</button>
-    </section>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="script.js"></script>
-  <script src="assets/js/questions.js"></script>
 </body>
 
 </html>

@@ -1011,7 +1011,7 @@ let getWord = function () {
 }
 
 //multistep process
-function startSuffixing() {
+function initialize() {
 	pageContentEl('#resultSection').classList.remove('hide');
 	pageContentEl('#results').innerHTML = `${getWord}`;
 	//checkWord();
@@ -1025,5 +1025,8 @@ let pageContentEl = function (element) {
 };
 
 
+const inputContent = document.querySelector('#wordInput').value;
+
 //activate the html suffixate button
-pageContentEl('#go').addEventListener('click', startSuffixing());
+const suffixBtn = document.querySelector('#go');
+suffixBtn.addEventListener('click', initialize);
