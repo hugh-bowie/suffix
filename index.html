@@ -12,28 +12,24 @@
 <body>
   <div class="wrapper">
     <header>
-      <h1>Suffixacte Me</h1>
+      <h1>Suffixisation</h1>
     </header>
     <div class="card">
-      <form>
-        <div>
-          <label for="wordinput">Type a word to suffixate</label>
-          <input id="wordinput" name="word_input" type="text" required autofocus pattern="[a-zA-Z]{2,20}">
-          <span class="validity"></span>
-          <button id="goo" class="btn">Do Work</button>
-        </div>
-        <div>
-        </div>
-      </form>
-      <div class="card-body">
-        <textarea readonly id="password" placeholder="ta-da" aria-label="Generated Password"></textarea>
+      <div class>
+        <label for="wordinput">Type a word to suffixate</label>
+        <input id="wordinput" name="word_input" type="text" required autofocus pattern="[a-zA-Z]{2,20}">
+        <span class="validity"></span>
+        <button id="go" class="btn">☁</button>
+      </div>
+      <div class="card-body hide">
+        <span id="output" placeholder="ta-da" aria-label="Suffix List"></span>
       </div>
       <div class="card-footer">
-        <!-- <button id="go" class="btn">Add Suffixes</button> -->
       </div>
     </div>
   </div>
   <script src="script.js"></script>
+  <script src="suffixList.js"></script>
 </body>
 
 </html>

@@ -61,42 +61,29 @@ input:invalid + span:after {
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
 	color: hsl(206, 17%, 28%);
 	font-size: 18px;
-	margin: 0 auto;
-	max-width: 800px;
+	margin: 0;
+
+	
 	padding: 30px 40px;
 	/* border: 1px solid red; */
 }
 
-.card-header::after {
+/* .card-header::after {
 	content: ' ';
 	display: block;
 	width: 100%;
 	background: #e7e9eb;
 	height: 2px;
 	
-}
+} */
 
 .card-body {
 	min-height: 100px;
+	height: 100%;
 }
 
-.card-footer {
-	text-align: center;
-}
-
-.card-footer::before {
-	content: ' ';
-	display: block;
-	width: 100%;
-	background: #e7e9eb;
-	height: 2px;
-	
-}
-
-.card-footer::after {
-	content: ' ';
-	display: block;
-	clear: both;
+.hide{
+	display: none;
 }
 
 .btn {
@@ -114,6 +101,10 @@ input:invalid + span:after {
 	cursor: pointer;
 }
 
+button:hover {
+	background-color: #073266;
+}
+
 button[disabled] {
 	cursor: default;
 	background: #c0c7cf;
@@ -124,25 +115,26 @@ button[disabled] {
 	
 }
 
-#password {
+#output {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	border: none;
 	display: block;
 	width: 100%;
+	height: 100%;
 	padding-top: 15px;
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-bottom: 85px;
 	font-size: 1.2rem;
-	text-align: center;
+	text-align: start;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	border: 2px dashed #c0c7cf;
 	border-radius: 6px;
-	resize: none;
-	overflow: hidden;
+	resize:both;
+	overflow:auto;
 }
 
 @media (max-width: 690px) {
@@ -152,7 +144,7 @@ button[disabled] {
 		padding: 10px 15px;
 	}
 
-	#password {
+	#output {
 		font-size: 1rem;
 	}
 }
