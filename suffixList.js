@@ -444,7 +444,7 @@ const suffixList = [
 	'-k',
 	'-kacin',
 	'-kin',
-	'-kin-',
+	'-kin',
 	'-kind',
 	'-kinesis',
 	'-kini',

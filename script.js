@@ -18,7 +18,11 @@ function initialize() {
 	// get user text
 	let getInputValue = function () {
 		let inputValue = document.querySelector('#wordinput').value;
-		return inputValue.toString();
+		if (inputValue.length == 0) {
+			inputValue = ' you forgot the word jackass ';
+			return inputValue;
+		}
+		return inputValue;
 	}
 
 
@@ -36,9 +40,10 @@ function initialize() {
 	// make the suffix list
 	let generateSuffix = function () {
 
-		let inputText = getInputValue();
 		let suffixArray = '';
 		let howMany = r(50, 100);
+		let inputText = getInputValue();
+
 		for (let i = 0; i < howMany; i++) {
 			suffixArray = suffixList.sort(() => Math.random() - Math.random())
 				.slice(0, howMany)
@@ -47,6 +52,7 @@ function initialize() {
 				.replace(/\,/g, '\n');
 		}
 		return suffixArray;
+
 	}
 
 	//add suffixes
@@ -54,7 +60,7 @@ function initialize() {
 	const newH1 = changeH1();
 	//put the new stuff into the page
 	h1El.innerText = newH1;
-
+	// if (getInputValue == )
 	outputDiv.classList.remove('hide');
 	outputEl.innerText = result;
 
