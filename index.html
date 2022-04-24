@@ -16,15 +16,32 @@
     </header>
     <div class="card">
       <div class="card-input">
-        <label for="wordinput">Type a word to suffixate:</label>
-        <input id="wordinput" placeholder="&nbsp;&nbsp;try&nbsp;'Shitbag'" type="text" required autofocus pattern="[a-zA-Z0-9]{1,20}">
-        <span class="validity"></span>
-        <button id="go" class="btn">Do work</button>
+        <table width="100%">
+          <tr>
+            <td width="50">&nbsp;</td>
+            <td><label>Quantity</label></td>
+            <td><input type="range" id="range" min="0" max="50" step="1" value="29"></td>
+            <td><span id="rangeVal"></span></td>
+            <td width="50">&nbsp;</td>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+            <td width="50">&nbsp;</td>
+            <td><label>Any word</label></td>
+            <td><input id="wordinput" placeholder="  Thirst" type="text" required autofocus pattern="[a-zA-Z0-9]{1,20}"></td>
+            <td><button id="go" class="btn">Try me</button></td>
+            <td width="50">&nbsp;</td>
+          </tr>
+        </table>
       </div>
       <div class="card-body hide">
-        <span id="output" placeholder="ta-da" aria-label="Suffix List"></span>
-      </div>
-      <div class="card-footer">
+        <table></table>
+        <tr>
+          <td>
+            <div id="output"></div>
+          </td>
+        </tr>
       </div>
     </div>
   </div>

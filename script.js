@@ -4,10 +4,16 @@ function r(min, max) {
 	return ~~(Math.random() * (max - min) + min);
 }
 
+let range = document.querySelector('#range');
+let rangeVal = document.querySelector('#rangeVal');
+rangeVal.innerHTML = range.value;
+
+range.oninput = function () {
+	rangeVal.innerHTML = this.value;
+}
 
 // multistep process
 function initialize() {
-
 
 	//get the elements to change
 	const outputEl = document.querySelector('#output');
@@ -20,9 +26,10 @@ function initialize() {
 		let inputValue = document.querySelector('#wordinput').value;
 		if (inputValue.length == 0) {
 			inputValue = ' you forgot the word jackass ';
-			return inputValue;
+			return inputValue.toString();
+		} else {
+			return inputValue.toString();
 		}
-		return inputValue;
 	}
 
 
@@ -37,13 +44,17 @@ function initialize() {
 	}
 
 
+	let getHowMany = function () {
+		let howMany = document.querySelector('#range').value;
+		return howMany;
+	}
+
+
 	// make the suffix list
 	let generateSuffix = function () {
-
 		let suffixArray = '';
-		let howMany = r(50, 100);
+		let howMany = getHowMany();
 		let inputText = getInputValue();
-
 		for (let i = 0; i < howMany; i++) {
 			suffixArray = suffixList.sort(() => Math.random() - Math.random())
 				.slice(0, howMany)
@@ -52,15 +63,14 @@ function initialize() {
 				.replace(/\,/g, '\n');
 		}
 		return suffixArray;
-
 	}
+
 
 	//add suffixes
 	const result = generateSuffix();
 	const newH1 = changeH1();
 	//put the new stuff into the page
 	h1El.innerText = newH1;
-	// if (getInputValue == )
 	outputDiv.classList.remove('hide');
 	outputEl.innerText = result;
 
