@@ -35,6 +35,7 @@ function initialize() {
 
 	// make the suffix list
 	let generateSuffix = function () {
+
 		let inputText = getInputValue();
 		let suffixArray = '';
 		let howMany = r(50, 100);
@@ -53,8 +54,8 @@ function initialize() {
 	const newH1 = changeH1();
 	//put the new stuff into the page
 	h1El.innerText = newH1;
-	outputDiv.classList.remove('hide');
 
+	outputDiv.classList.remove('hide');
 	outputEl.innerText = result;
 
 }

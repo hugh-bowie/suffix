@@ -25,9 +25,13 @@ header {
 }
 
 /*---TEXT INPUT RULES---*/
+.card-input {
+line-height: 24px;
+}
 
 input + span {
 	position: relative;
+	line-height: 24px;
 }
 
 input:valid + span:after {
@@ -61,7 +65,9 @@ input:invalid + span:after {
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
 	color: hsl(206, 17%, 28%);
 	font-size: 18px;
-	margin: 0;
+	margin: 0 auto;
+	max-width: 700px;
+
 
 	
 	padding: 30px 40px;
@@ -94,7 +100,7 @@ input:invalid + span:after {
 	color: hsl(0, 0%, 100%);
 	display: inline-block;
 	font-size: 18px;
-	line-height: 26px;
+	line-height: 24px;
 	margin: 16px 16px 16px 20px;
 	padding: 5px 24px;
 	text-align: center;
