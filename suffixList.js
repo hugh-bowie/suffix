@@ -347,7 +347,7 @@ const suffixList = [
 	'-holic',
 	'-holism',
 	'-hood',
-	'-hour-old',
+	'-hourold',
 	'-i',
 	'-ia',
 	'-iad',
