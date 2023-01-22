@@ -24,8 +24,8 @@ function initialize() {
 	// get user text
 	let getInputValue = function () {
 		let inputValue = document.querySelector('#wordinput').value;
-		if (inputValue.length == 0) {
-			inputValue = ' you forgot the word jackass ';
+		if (inputValue.length === 0) {
+			inputValue = ' add a word ';
 			return inputValue.toString();
 		} else {
 			return inputValue.toString();
