@@ -58,6 +58,10 @@ function initialize() {
 		let inputLastLetter = inputText[inputText.length - 1];
 		// check last letter of input text and add suffixes accordingly
 		switch (inputLastLetter) {
+			case 'p':
+				// if last letter is t, add another t before adding the suffix
+				inputText = inputText + 'p';
+				break;
 			case 't':
 				// if last letter is t, add another t before adding the suffix
 				inputText = inputText + 't';
@@ -82,7 +86,7 @@ function initialize() {
 		return suffixArray;
 	}
 	//add suffixes
-	const result = generateSuffix(); 
+	const result = generateSuffix();
 	const newH1 = changeH1();
 	//put the new stuff into the page
 	h1El.innerText = newH1;
