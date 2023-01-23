@@ -60,7 +60,7 @@ function initialize() {
 		switch (inputLastLetter) {
 			case 'e':
 				// if last letter is t, add another t before adding the suffix
-				inputText = inputText.slice(-1, 1);
+				inputText = inputText - inputLastLetter;
 				break;
 			case 'p':
 				// if last letter is t, add another t before adding the suffix
