@@ -58,6 +58,10 @@ function initialize() {
 		let inputLastLetter = inputText[inputText.length - 1];
 		// check last letter of input text and add suffixes accordingly
 		switch (inputLastLetter) {
+			case 'e':
+				// if last letter is t, add another t before adding the suffix
+				inputText = inputText.slice(-1);
+				break;
 			case 'p':
 				// if last letter is t, add another t before adding the suffix
 				inputText = inputText + 'p';
