@@ -14,6 +14,7 @@ body,
 
 body {
 	font-family: Arial;
+	font-size: 14px;
 	background-color: white;
 }
 
@@ -54,10 +55,10 @@ input[type="text"] {
 	border-width: 1px;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
 	color: hsl(206, 17%, 28%);
-	font-size: 18px;
+	font-size: 16px;
 	margin: 0 auto;
 	max-width: 700px;
-	padding: 30px 40px;
+	padding: 10px;
 	/* border: 1px solid red; */
 }
 
@@ -72,17 +73,16 @@ input[type="text"] {
 }
 
 .btn {
+	
+	width: 50px;
 	border: none;
 	background-color: #3486eb;
 	border-radius: 25px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
 	color: hsl(0, 0%, 100%);
-	
-	font-size: 18px;
-	line-height: 22px;
-	
-	padding: 5px 10px;
-	
+	font-size: 16px;
+	line-height: 24px;
+	margin: 0;
 	cursor: pointer;
 }
 
@@ -95,7 +95,10 @@ button[disabled] {
 	background: #c0c7cf;
 }
 
-
+.f14 {
+	font-size: 14px;
+	vertical-align: center;
+}
 
 #output {
 	-webkit-appearance: none;
@@ -121,9 +124,11 @@ button[disabled] {
 
 @media (max-width: 690px) {
 	.btn {
-		font-size: 1rem;
-		margin: 10px 0px 0px 0px;
-		padding: 10px 15px;
+		
+		margin: 0;
+		width: 60px;
+		font-size: 16px;
+		line-height: 24px;
 	}
 
 	#output {
@@ -133,7 +138,10 @@ button[disabled] {
 
 @media (max-width: 500px) {
 	.btn {
-		font-size: 0.8rem;
+		margin: 0;
+		width: 60px;
+		font-size: 16px;
+		line-height: 24px;
 	}
 }
 

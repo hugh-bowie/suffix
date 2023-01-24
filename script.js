@@ -24,8 +24,8 @@ function initialize() {
 	// get user text
 	let getInputValue = function () {
 		let inputValue = document.querySelector('#wordinput').value;
-		if (inputValue.length == 0) {
-			inputValue = ' you forgot the word jackass ';
+		if (inputValue.length === 0) {
+			inputValue = ' add a word ';
 			return inputValue.toString();
 		} else {
 			return inputValue.toString();
@@ -55,17 +55,40 @@ function initialize() {
 		let suffixArray = '';
 		let howMany = getHowMany();
 		let inputText = getInputValue();
+		let inputLastLetter = inputText[inputText.length - 1];
+		// check last letter of input text and add suffixes accordingly
+		switch (inputLastLetter) {
+			case 'e':
+				// if last letter is t, add another t before adding the suffix
+				inputText = inputText.slice(0, -1);
+				break;
+			case 'p':
+				// if last letter is t, add another t before adding the suffix
+				inputText = inputText + 'p';
+				break;
+			case 't':
+				// if last letter is t, add another t before adding the suffix
+				inputText = inputText + 't';
+				break;
+			default:
+				// if last letter is not t, don't add anything
+				break;
+		}
 		for (let i = 0; i < howMany; i++) {
-			suffixArray = suffixList.sort(() => Math.random() - Math.random())
+
+			let filteredSuffixList = suffixList.filter(suffix => !suffix.startsWith("T"))
+
+			filteredSuffixList.sort();
+
+			suffixArray = filteredSuffixList.sort(() => Math.random() - Math.random())
+
 				.slice(0, howMany)
 				.toString()
-				.replace(/-/g, `#${inputText}`)
+				.replace(/-/g, `${inputText}`)
 				.replace(/\,/g, '\n');
 		}
 		return suffixArray;
 	}
-
-
 	//add suffixes
 	const result = generateSuffix();
 	const newH1 = changeH1();
@@ -78,4 +101,10 @@ function initialize() {
 
 //activate the html suffixate button
 const suffixBtn = document.querySelector('#go');
+
 suffixBtn.addEventListener('click', initialize);
+suffixBtn.addEventListener('keydown', (event) => {
+	if (event.keyCode === 13) {
+		initialize();
+	}
+});
