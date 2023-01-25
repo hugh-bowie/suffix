@@ -56,7 +56,7 @@ function initialize() {
 		let howMany = getHowMany();
 		let inputText = getInputValue();
 		let inputLastLetter = inputText[inputText.length - 1];
-		// let suffixFirstLetter = initialSuffixList[0][0];
+		// check last letter of input text and add suffixes accordingly
 		switch (inputLastLetter) {
 			case 'e':
 				// if last letter is t, add another t before adding the suffix
@@ -74,23 +74,21 @@ function initialize() {
 				// if last letter is not t, don't add anything
 				break;
 		}
-
 		for (let i = 0; i < howMany; i++) {
-			let initialSuffixList = suffixList.sort(() => Math.random() - Math.random());
 
+			let filteredSuffixList = suffixList.filter(suffix => !suffix.startsWith("T"))
 
-			// check last letter of input text and add suffixes accordingly
-			suffixArray = initialSuffixList.slice(0, howMany)
+			filteredSuffixList.sort();
+
+			suffixArray = filteredSuffixList.sort(() => Math.random() - Math.random())
+
+				.slice(0, howMany)
 				.toString()
 				.replace(/-/g, `${inputText}`)
 				.replace(/\,/g, '\n');
-
-			suffixArray.sort();
-			return suffixArray;
 		}
-
+		return suffixArray;
 	}
-
 	//add suffixes
 	const result = generateSuffix();
 	const newH1 = changeH1();
