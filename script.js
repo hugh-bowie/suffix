@@ -58,22 +58,28 @@ function initialize() {
 		let inputLastLetter = inputText[inputText.length - 1];
 		// check last letter of input text and add suffixes accordingly
 		switch (inputLastLetter) {
-			case 'e':
-				// if last letter is t, add another t before adding the suffix
-				inputText = inputText.slice(0, -1);
+			case 'd':
+				inputText = inputText + 'd';
+				break;
+			case 'k':
+				inputText = inputText + 'o';
+				break;
+			case 'l':
+				inputText = inputText + 'l';
+				break;
+			case 'm':
+				inputText = inputText + 'm';
 				break;
 			case 'p':
-				// if last letter is t, add another t before adding the suffix
 				inputText = inputText + 'p';
 				break;
 			case 't':
-				// if last letter is t, add another t before adding the suffix
 				inputText = inputText + 't';
 				break;
 			default:
-				// if last letter is not t, don't add anything
 				break;
 		}
+
 		for (let i = 0; i < howMany; i++) {
 
 			let filteredSuffixList = suffixList.filter(suffix => !suffix.startsWith("T"))
