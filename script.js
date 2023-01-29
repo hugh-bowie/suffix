@@ -16,7 +16,9 @@ range.oninput = function () {
 function initialize() {
 
 	//get the elements to change
-	const outputEl = document.querySelector('#output');
+	const outputEl = document.querySelector('#output1');
+	const outputE2 = document.querySelector('#output2');
+	const outputE3 = document.querySelector('#output3');
 	const outputDiv = document.querySelector('.card-body');
 	const h1El = document.querySelector('h1');
 
@@ -96,12 +98,16 @@ function initialize() {
 		return suffixArray;
 	}
 	//add suffixes
-	const result = generateSuffix();
+	const result1 = generateSuffix();
+	const result2 = generateSuffix();
+	const result3 = generateSuffix();
 	const newH1 = changeH1();
 	//put the new stuff into the page
 	h1El.innerText = newH1;
 	outputDiv.classList.remove('hide');
-	outputEl.innerText = result;
+	outputEl.innerText = result1;
+	outputE2.innerText = result2;
+	outputE3.innerText = result3;
 
 }
 
