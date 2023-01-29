@@ -16,12 +16,13 @@ body,
 
 .outputcolumn {
 	padding: 10px 50px;
-	font-size: 16px;
+	font-size: 18px;
+	line-height: 1.4;
 }
 
 body {
 	font-family: Arial;
-	font-size: 16px;
+	font-size: 18px;
 	background-color: white;
 }
 
@@ -42,7 +43,7 @@ header {
 textarea,
 input,
 select {
-    font-size: 16px;
+    font-size: 18px;
 }
 input[type="range"],
 input[type="text"] {
@@ -66,7 +67,7 @@ input[type="text"] {
 	border-width: 1px;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
 	color: hsl(206, 17%, 28%);
-	font-size: 16px;
+	font-size: 18px;
 	margin: 0 auto;
 	max-width: 700px;
 	padding: 10px;
@@ -91,7 +92,7 @@ input[type="text"] {
 	border-radius: 25px;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
 	color: hsl(0, 0%, 100%);
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 24px;
 	margin: 0;
 	cursor: pointer;
