@@ -5,7 +5,7 @@ function r(min, max) {
 }
 
 //array of all them suffixes
-const suffixes = [
+const suffixList = [
 	'-a',
 	'-athon',
 	'-athalon',
@@ -194,7 +194,6 @@ const suffixes = [
 	'-cy',
 	'-cycline',
 	'-cyte',
-	'-\'d',
 	'-d',
 	'-dactyl',
 	'-dan',
@@ -245,7 +244,6 @@ const suffixes = [
 	'-ent',
 	'-enyl',
 	'-eous',
-	'-`er',
 	'-er',
 	'-ergic',
 	'-ergy',
@@ -304,46 +302,50 @@ const suffixes = [
 	'-fungin',
 	'-furter',
 	'-fy',
+	'-agamous',
 	'-gamous',
 	'-gamy',
+	'-ogamy',
 	'-gasm',
 	'-gastria',
 	'-gate',
-	'-gatran',
-	'-gaze',
-	'-geddon',
-	'-gen',
-	'-genesis',
-	'-genic',
-	'-genin',
-	'-genous',
-	'-geny',
+	'-ogate',
+	'-ogatran',
+	'-ogaze',
+	'-ageddon',
+	'-ogen',
+	'-ogenesis',
+	'-ogenic',
+	'-ogenin',
+	'-ogenous',
+	'-ogeny',
 	'-gerous',
 	'-gest',
 	'-gesterone',
 	'-giline',
-	'-giri',
+	'-ogiri',
 	'-gliflozin',
-	'-gliptin',
+	'-ogliptin',
 	'-glitazar',
 	'-glitazone',
 	'-glossia',
 	'-glot',
-	'-glutide',
+	'-oglutide',
 	'-gnathous',
 	'-golide',
 	'-gon',
 	'-gony',
-	'-gram',
+	'-ogram',
+	'-agram',
 	'-gramme',
-	'-graph',
-	'-grapher',
-	'-graphic',
-	'-graphical',
-	'-graphy',
+	'-ograph',
+	'-ographer',
+	'-ographic',
+	'-ographical',
+	'-ography',
 	'-grave',
 	'-grel',
-	'-gyny',
+	'-ogyny',
 	'-ham',
 	'-happy',
 	'-head',
@@ -354,7 +356,7 @@ const suffixes = [
 	'-holic',
 	'-holism',
 	'-hood',
-	'-hour-old',
+	'-hourold',
 	'-i',
 	'-ia',
 	'-iad',
@@ -409,9 +411,8 @@ const suffixes = [
 	'-imundo',
 	'-imus',
 	'-in',
-	'-in`',
-	'-in-law',
-	'-in-waiting',
+	'-inlaw',
+	'-inwaiting',
 	'-inator',
 	'-inda',
 	'-ine',
@@ -433,7 +434,7 @@ const suffixes = [
 	'-istic',
 	'-istical',
 	'-istically',
-	'-it-all',
+	'-itall',
 	'-ite',
 	'-itis',
 	'-itol',
@@ -451,7 +452,7 @@ const suffixes = [
 	'-k',
 	'-kacin',
 	'-kin',
-	'-kin-',
+	'-kin',
 	'-kind',
 	'-kinesis',
 	'-kini',
@@ -474,7 +475,10 @@ const suffixes = [
 	'-leptic',
 	'-less',
 	'-let',
-	'-licious',
+	'-alicious',
+	'-ilicious',
+	'-olicious',
+	'-elicious',
 	'-like',
 	'-lin',
 	'-ling',
@@ -574,7 +578,7 @@ const suffixes = [
 	'-nomicon',
 	'-nomics',
 	'-nomy',
-	'-n`t',
+	'-nt',
 	'-nym',
 	'-nymy',
 	'-o',
@@ -637,7 +641,7 @@ const suffixes = [
 	'-otomy',
 	'-our',
 	'-ous',
-	'-out-law',
+	'-outlaw',
 	'-ov',
 	'-oxacin',
 	'-oxanide',
@@ -647,20 +651,24 @@ const suffixes = [
 	'-oxy',
 	'-oyl',
 	'-pagus',
-	'-palooza',
+	'-opalooza',
 	'-pamil',
 	'-pants',
 	'-parin',
 	'-parinux',
-	'-parous',
+	'-aparous',
 	'-partite',
-	'-path',
-	'-pathic',
-	'-pathy',
+	'-opath',
+	'-opathic',
+	'-opathy',
+	'-opathy',
+	'-epathy',
+	'-ipathy',
 	'-pause',
 	'-ped',
-	'-pedia',
-	'-penia',
+	'-opedia',
+	'-epedia',
+	'-openia',
 	'-people',
 	'-peridol',
 	'-peridone',
@@ -668,24 +676,24 @@ const suffixes = [
 	'-person',
 	'-petal',
 	'-pexy',
-	'-phage',
-	'-phagia',
-	'-phagic',
-	'-phagous',
-	'-phagy',
-	'-phany',
-	'-phasia',
-	'-phil',
-	'-phile',
+	'-ophage',
+	'-ophagia',
+	'-ophagic',
+	'-ophagous',
+	'-ophagy',
+	'-ophany',
+	'-ophasia',
+	'-ophil',
+	'-ophile',
 	'-philia',
 	'-philiac',
 	'-philic',
 	'-philous',
-	'-phily',
-	'-phobe',
-	'-phobia',
-	'-phobiac',
-	'-phobic',
+	'-ophily',
+	'-ophobe',
+	'-ophobia',
+	'-ophobiac',
+	'-ophobic',
 	'-phone',
 	'-phonia',
 	'-phonic',
@@ -716,7 +724,7 @@ const suffixes = [
 	'-plon',
 	'-pnea',
 	'-pnoea',
-	'-pocalypse',
+	'-opocalypse',
 	'-pod',
 	'-poeia',
 	'-poiesis',
@@ -776,7 +784,6 @@ const suffixes = [
 	'-rrhoea',
 	'-rubicin',
 	'-ry',
-	'-`s',
 	'-s',
 	'-safe',
 	'-sal',
@@ -970,35 +977,40 @@ const suffixes = [
 	'-zumab',
 	'-zygous',
 	'-zza',
+	'-iza',
+	'-aza',
 ]
 
+let result = suffixList.sort((a, b) => {
+	a.length - b.length;
+	
+})
+console.log(JSON.stringify(result, null, 2));
+let inputText = 'Houdini';
+
+// const suffixtags = suffixList
+// 	.sort(() => Math.random() - Math.random())
+// 	.slice(0, 27)
+// 	.toString()
+// 	.replace(/-/g, `#${werd}`)
+// 	.replace(/\,/g, '\n');
 
 
-let werd = 'Houdini';
+// const suffixing = suffixList
+// 	.sort(() => Math.random() - Math.random())
+// 	.slice(0, 27)
+// 	.toString()
+// 	.replace(/-/g, werd)
+// 	.replace(/\,/g, ' \n');
 
-const suffixtags = suffixes
-	.sort(() => Math.random() - Math.random())
-	.slice(0, 27)
-	.toString()
-	.replace(/-/g, `#${werd}`)
-	.replace(/\,/g, '\n');
-
-
-const suffixing = suffixes
-	.sort(() => Math.random() - Math.random())
-	.slice(0, 27)
-	.toString()
-	.replace(/-/g, werd)
-	.replace(/\,/g, ' \n');
-
-const suffixed = `${suffixing} \n`;
-//console.log(`\n${suffixing}\n`);
-//console.log(`${suffixtags}`);
+// const suffixed = `${suffixing} \n`;
+// //console.log(`\n${suffixing}\n`);
+// //console.log(`${suffixtags}`);
 
 
 
-fs.appendFileSync('C:/t/suffix.txt', `${suffixtags}`, 'utf8');
-console.log(`${suffixtags}`);
+// fs.appendFile('suffix.txt', `${suffixList}`, 'utf8', JSON.stringify((suffixList, null, 2)));
+
 
 
 

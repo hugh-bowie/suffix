@@ -296,9 +296,9 @@ const suffixList = [
 	'-furter',
 	'-fy',
 	'-agamous',
-	'-gamous'
+	'-gamous',
 	'-gamy',
- '-ogamy',
+	'-ogamy',
 	'-gasm',
 	'-gastria',
 	'-gate',
@@ -970,5 +970,7 @@ const suffixList = [
 	'-zumab',
 	'-zygous',
 	'-zza',
+	'-iza',
+	'-aza',
 ]
 
