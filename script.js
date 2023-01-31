@@ -51,12 +51,21 @@ function initialize() {
 		return howMany;
 	}
 
+	let includeTagsBool = function () {
+		let tagsy = document.querySelector('#tagsY').value;
+		if (tagsy === 'yes') {
+			tagsy = '#';
+		} else { tagsy = ''; }
+		return tagsy;
+	}
+
 
 	// make the suffix list
 	let generateSuffix = function () {
 		let suffixArray = '';
 		let howMany = getHowMany();
 		let inputText = getInputValue();
+		let hashtags = includeTagsBool();
 		let inputLastLetter = inputText[inputText.length - 1];
 		// check last letter of input text and add suffixes accordingly
 		switch (inputLastLetter) {
@@ -84,17 +93,14 @@ function initialize() {
 
 		for (let i = 0; i < howMany; i++) {
 
-			let filteredSuffixList = suffixList.filter(suffix => !suffix.startsWith("T"))
-
-			filteredSuffixList.sort();
-
-			suffixArray = filteredSuffixList.sort(() => Math.random() - Math.random())
-
+			suffixArray = suffixList.sort(() => Math.random() - Math.random())
 				.slice(0, howMany)
 				.toString()
-				.replace(/-/g, `${inputText}`)
+				.replace(/-/g, `${hashtags}${inputText}`)
 				.replace(/\,/g, '\n');
+
 		}
+
 		return suffixArray;
 	}
 	//add suffixes

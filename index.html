@@ -22,13 +22,14 @@
     <div class="wrapper">
       <header>
         <h1>Suffixia</h1>
+        <!-- <img src="assets/images/logo.svg" width="100%" alt=""> -->
       </header>
       <div class="card">
         <div class="card-input">
-          <table width="100%" align="center" padding="20px" vertical-align="center">
-            <tr padding="10px">
+          <table width="100%" align="center" padding="10px" vertical-align="center">
+            <tr>
               <td><label>Quantity</label></td>
-              <td width="90%" align="center" style="width:90%;"><input width="90%" align="center" style="width:90%;" type="range" id="range" min="0" max="100" step="5" value="30"></td>
+              <td width="95%" align="center" style="width:95%;"><input width="95%" align="center" style="width:95%;" type="range" id="range" min="0" max="100" step="5" value="30"></td>
               <td align="center"><span id="rangeVal"></span></td>
             </tr>
             <tr>
@@ -37,8 +38,20 @@
               <td height="10" style="height:10px"></td>
             </tr>
             <tr>
+              <td><label>Tags</label></td>
+              <td>
+                <input type="radio" id="tagsY" name="tags" value="yes"><label for="tagsY">Y&nbsp;&nbsp;</label>
+                <input type="radio" id="tagsN" name="tags" value="No" checked><label for="tagsN">N</label>
+              </td>
+            </tr>
+            <tr>
+              <td height="10" style="height:10px"></td>
+              <td height="10" style="height:10px"></td>
+              <td height="10" style="height:10px"></td>
+            </tr>
+            <tr>
               <td><label>Any&nbsp;word</label></td>
-              <td width="90%" align="center" style="width:90%;"><input width="90%" align="center" style="width:90%;" id="wordinput" placeholder="" type="text" required autofocus pattern="[a-zA-Z0-9]{1,20}"></td>
+              <td width="95%" align="center" style="width:95%;"><input width="95%" align="center" style="width:95%;" id="wordinput" placeholder="" type="text" required autofocus pattern="[a-zA-Z0-9]{1,20}"></td>
               <td><button id="go" align="center" class="btn">Get</button></td>
             </tr>
           </table>
