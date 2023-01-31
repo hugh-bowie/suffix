@@ -54,7 +54,7 @@ function initialize() {
 	let includeTagsBool = function () {
 		let tagsy = document.querySelector('#tagsY').value;
 		let tagsN = document.querySelector('#tagsN').value;
-		if (tagsy === 'yes') {
+		if (tagsy === true) {
 			tagsy = '#';
 		} else { tagsy = ''; }
 		return tagsy;
