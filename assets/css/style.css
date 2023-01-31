@@ -33,11 +33,11 @@ label {
 }
 
 
-/* .outputcolumn {
+.outputcolumn {
 	padding: 1px 1px 1px 1px;
 	font-size: 1.2rem;
 	line-height: 1.4;
-} */
+}
 /*---TEXT INPUT RULES---*/
 .card-input {
 	margin: 20px 5px;
