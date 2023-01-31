@@ -67,7 +67,7 @@ function initialize() {
 		let suffixArray = '';
 		let howMany = getHowMany();
 		let inputText = getInputValue();
-		includeTagsBool();
+		let hashtags = includeTagsBool();
 		let inputLastLetter = inputText[inputText.length - 1];
 		// check last letter of input text and add suffixes accordingly
 		switch (inputLastLetter) {
