@@ -298,7 +298,7 @@ const suffixList = [
 	'-agamous',
 	'-gamous',
 	'-gamy',
-	'-ogamy',
+	'-ogamy', 
 	'-gasm',
 	'-gastria',
 	'-gate',

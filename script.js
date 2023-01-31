@@ -51,21 +51,18 @@ function initialize() {
 		return howMany;
 	}
 
-
-
-
 	// make the suffix list
 	let generateSuffix = function () {
 		let hashtags = '';
 		let suffixArray = '';
 		let howMany = getHowMany();
 		let inputText = getInputValue();
-		let tags = document.querySelector('#tagsY').value;
+		let tags = document.querySelector('input[name="tags"]:checked').value;
 		let inputLastLetter = inputText[inputText.length - 1];
-
-		if (!tags === 'yes') {
+		console.log(tags);
+		if (tags == 'yes') {
 			hashtags = '#';
-		} else if (tags) { hashtags = ''; }
+		}
 
 		// check last letter of input text and add suffixes accordingly
 		switch (inputLastLetter) {
