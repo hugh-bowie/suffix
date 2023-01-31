@@ -144,7 +144,7 @@ button[disabled] {
 	margin-top: 0;
 	margin-bottom: 0;
 	
-	resize:none;
+	resize:both;
 	overflow:auto;
 }
 
@@ -164,7 +164,7 @@ button[disabled] {
 	text-align: start;
 	margin-top: 0;
 	margin-bottom: 0;
-	resize:none;
+	resize:both;
 	overflow:auto;
 }
 

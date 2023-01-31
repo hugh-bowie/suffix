@@ -51,24 +51,22 @@ function initialize() {
 		return howMany;
 	}
 
-	let includeTagsBool = function () {
-		let hashtags = '';
-		let tags = document.querySelector('#tagsY').value;
-		// let tagsN = document.querySelector('#tagsN').value;
-		if (tags === 'true') {
-			hashtags = '#';
-		} else { hashtags = ''; }
-		return hashtags;
-	}
+
 
 
 	// make the suffix list
 	let generateSuffix = function () {
+		let hashtags = '';
 		let suffixArray = '';
 		let howMany = getHowMany();
 		let inputText = getInputValue();
-		let hashtags = includeTagsBool();
+		let tags = document.querySelector('#tagsY').value;
 		let inputLastLetter = inputText[inputText.length - 1];
+
+		if (!tags === 'yes') {
+			hashtags = '#';
+		} else if (tags) { hashtags = ''; }
+
 		// check last letter of input text and add suffixes accordingly
 		switch (inputLastLetter) {
 			case 'd':
