@@ -54,9 +54,7 @@ function initialize() {
 	let includeTagsBool = function () {
 		let tagsy = document.querySelector('#tagsY').value;
 		let tagsN = document.querySelector('#tagsN').value;
-		if (tagsy === true) {
-			tagsy = '#';
-		} else { tagsy = ''; }
+
 		return tagsy;
 	}
 
@@ -64,9 +62,13 @@ function initialize() {
 	// make the suffix list
 	let generateSuffix = function () {
 		let suffixArray = '';
+		let hashtags = '';
 		let howMany = getHowMany();
 		let inputText = getInputValue();
-		let hashtags = includeTagsBool();
+
+		if (includeTagsBool()) {
+			hashtags = '#';
+		} else { tagsy = ''; }
 		let inputLastLetter = inputText[inputText.length - 1];
 		// check last letter of input text and add suffixes accordingly
 		switch (inputLastLetter) {
