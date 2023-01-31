@@ -55,7 +55,7 @@ function initialize() {
 		let hashtags = '';
 		let tags = document.querySelector('#tagsY').value;
 		// let tagsN = document.querySelector('#tagsN').value;
-		if (tags === true) {
+		if (tags === 'true') {
 			hashtags = '#';
 		} else { hashtags = ''; }
 		return hashtags;
