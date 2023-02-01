@@ -68,7 +68,7 @@ function initialize() {
 		// check last letter of input text and add suffixes accordingly
 		switch (inputLastLetter) {
 			case 'd':
-				inputText = inputText + 'd';
+				inputText = inputText + 'i';
 				break;
 			case 'k':
 				inputText = inputText + 'o';
