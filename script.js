@@ -68,8 +68,8 @@ function initialize() {
 		// check last letter of input text and add suffixes accordingly
 		switch (inputLastLetter) {
 			//case 'd':
-				//inputText = inputText + 'i';
-				//break;
+			//inputText = inputText + 'i';
+			//break;
 			case 'k':
 				inputText = inputText + 'o';
 				break;
@@ -77,8 +77,8 @@ function initialize() {
 				inputText = inputText + 'l';
 				break;
 			//case 'm':
-				//inputText = inputText + 'm';
-				//break;
+			//inputText = inputText + 'm';
+			//break;
 			case 'p':
 				inputText = inputText + 'p';
 				break;
@@ -103,14 +103,15 @@ function initialize() {
 
 
 	//add suffixes
-	const result1 = generateSuffix();
-	const result2 = generateSuffix();
-	const result3 = generateSuffix();
+	let result1 = generateSuffix();
+	let result2 = generateSuffix();
+	let result3 = generateSuffix();
 	const newH1 = changeH1();
 	//put the new stuff into the page
 	h1El.innerText = newH1;
 	outputDiv.classList.remove('hide');
-	navigator.clipboard.writeText(result1 + result2 + result3);
+	let clipboardText = (result1 + result2).replaceAll('\n', ' ');
+	navigator.clipboard.writeText(clipboardText);
 	outputEl.innerText = result1;
 	outputE2.innerText = result2;
 	outputE3.innerText = result3;
