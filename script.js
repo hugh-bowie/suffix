@@ -59,7 +59,8 @@ function initialize() {
 		let inputText = getInputValue();
 		let tags = document.querySelector('input[name="tags"]:checked').value;
 		let inputLastLetter = inputText[inputText.length - 1];
-		console.log(tags);
+		//let suffixFirstLetter = suffixList.map(sfx => sfx.[0]);
+
 		if (tags == 'yes') {
 			hashtags = '#';
 		}
@@ -88,18 +89,19 @@ function initialize() {
 				break;
 		}
 
-		for (let i = 0; i < howMany; i++) {
 
+		for (let i = 0; i < howMany; i++) {
 			suffixArray = suffixList.sort(() => Math.random() - Math.random())
 				.slice(0, howMany)
 				.toString()
 				.replace(/-/g, `${hashtags}${inputText}`)
 				.replace(/\,/g, '\n');
-
 		}
 
 		return suffixArray;
 	}
+
+
 	//add suffixes
 	const result1 = generateSuffix();
 	const result2 = generateSuffix();
@@ -108,6 +110,7 @@ function initialize() {
 	//put the new stuff into the page
 	h1El.innerText = newH1;
 	outputDiv.classList.remove('hide');
+	navigator.clipboard.writeText(result1 + result2 + result3);
 	outputEl.innerText = result1;
 	outputE2.innerText = result2;
 	outputE3.innerText = result3;
@@ -118,8 +121,4 @@ function initialize() {
 const suffixBtn = document.querySelector('#go');
 
 suffixBtn.addEventListener('click', initialize);
-suffixBtn.addEventListener('keydown', (event) => {
-	if (event.keyCode === 13) {
-		initialize();
-	}
-});
+

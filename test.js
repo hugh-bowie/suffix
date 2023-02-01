@@ -1004,7 +1004,7 @@ console.log(suffixArray)
 let hashTagSuffixArray = suffixList.map(el => `#${inputText}${el}`);
 
 
-console.log(JSON.stringify(hashTagSuffixArray));
+console.log(hashTagSuffixArray);
 
 
 
