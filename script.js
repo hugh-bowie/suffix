@@ -76,9 +76,9 @@ function initialize() {
 			case 'l':
 				inputText = inputText + 'l';
 				break;
-			case 'm':
-				inputText = inputText + 'm';
-				break;
+			//case 'm':
+				//inputText = inputText + 'm';
+				//break;
 			case 'p':
 				inputText = inputText + 'p';
 				break;
