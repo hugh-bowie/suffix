@@ -990,21 +990,31 @@ const suffixList = [
 // });
 ////////// sort by length ///////////
 
+// let sortByAlphabet = suffixList.sort();
+// fs.appendFile('suffix.txt', `${sortByAlphabet} \n`, function (err) {
+// 	if (err) throw err;
+// 	console.log('The "data to append" was appended to file!');
+// });
+
 let howMany = 100;
 let inputText = 'Trash';
 
 
 
 let suffixArray = suffixList.sort(() => Math.random() - Math.random())
-	.slice(0, howMany)
-	.join(`\n`);
+	.slice(0, howMany);
+// .join(`\n`);
+
+let firstLetterOfEachSuffix = suffixArray.map(el => el.charAt(0));
+
+console.log('firstLetterOfEachSuffix', firstLetterOfEachSuffix);
 // .splice(0, 0, `#${inputText}`)
 console.log(suffixArray)
 
-let hashTagSuffixArray = suffixList.map(el => `#${inputText}${el}`);
+// let hashTagSuffixArray = suffixList.map(el => `#${inputText}${el}`);
 
 
-console.log(hashTagSuffixArray);
+// console.log(hashTagSuffixArray);
 
 
 

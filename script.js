@@ -54,7 +54,6 @@ function initialize() {
 	// make the suffix list
 	let generateSuffix = function () {
 		let hashtags = '';
-		let suffixArray = '';
 		let howMany = getHowMany();
 		let inputText = getInputValue();
 		let tags = document.querySelector('input[name="tags"]:checked').value;
@@ -67,9 +66,9 @@ function initialize() {
 
 		// check last letter of input text and add suffixes accordingly
 		switch (inputLastLetter) {
-			//case 'd':
-			//inputText = inputText + 'i';
-			//break;
+			case 'y':
+				inputText = inputText.replace('y', 'i');
+				break;
 			case 'k':
 				inputText = inputText + 'o';
 				break;
@@ -90,13 +89,17 @@ function initialize() {
 		}
 
 
-		for (let i = 0; i < howMany; i++) {
-			suffixArray = suffixList.sort(() => Math.random() - Math.random())
-				.slice(0, howMany)
-				.toString()
-				.replace(/-/g, `${hashtags}${inputText}`)
-				.replace(/\,/g, '\n');
-		}
+		let suffixArray = suffixList.sort(() => Math.random() - Math.random())
+			.slice(0, howMany)
+			.toString()
+			.replace(/-/g, `${hashtags}${inputText}`)
+			.replace(/\,/g, '\n');
+
+		///////////////////////////// This works
+		///////////////////////////// Add it to the switch statement
+		///////////////////////////// Add inputText to the switch statement too
+		// let firstLetterOfEachSuffix = suffixArray.map(el => el.charAt(0));
+		///////////////////////////// this works 
 
 		return suffixArray;
 	}
